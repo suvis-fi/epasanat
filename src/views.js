@@ -74,7 +74,7 @@ export function practiceView(vm) {
     </div>`
   } else if (vm.phase === 'check') {
     actions = `<div class="stack">
-      ${vm.canSpeak ? '<button class="secondary" type="button" data-action="replay">Toista</button>' : ''}
+      ${vm.canSpeak ? '<p class="muted center">Ensin tavut, sitten koko sana. Hitaasti.</p><button class="secondary" type="button" data-action="replay">Toista</button>' : ''}
       <p class="question">${esc(vm.question)}</p>
       <div class="pair">
         <button class="primary" type="button" data-action="yes">Kyllä</button>

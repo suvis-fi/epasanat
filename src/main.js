@@ -7,6 +7,8 @@ import {
   beginSession,
   completeSession,
   load,
+  markUsed,
+  save,
   scoreSession,
   suggestLevel,
   updateSettings,
@@ -62,6 +64,7 @@ init()
 
 function init() {
   applyTheme(activeTheme(load()))
+  migrateRecentWords()
   const state = load()
   if (!getLevels().some((level) => level.id === state.settings.levelId)) {
     updateSettings({ levelId: 'helppo' })
@@ -274,13 +277,32 @@ function settingsModel() {
 function startPractice() {
   const state = load()
   const level = getLevel(state.settings.levelId)
-  const words = pickWords(level, ROUND_SIZE, state.recentWords)
+  const words = drawWords(level, ROUND_SIZE)
   if (!words.length) return
   session = createSession(words)
   ending = null
   beginSession()
   view = 'practice'
   render()
+}
+
+function drawWords(level, count) {
+  const state = load()
+  const pick = pickWords(level, count, state.usedByLevel[level.id] || [])
+  markUsed(level.id, pick.usedNext)
+  return pick.words
+}
+
+function migrateRecentWords() {
+  const state = load()
+  if (!state.recentWords.length) return
+  for (const word of state.recentWords) {
+    const level = getLevels().find((item) => item.words.some((entry) => entry.word === word))
+    if (!level || state.usedByLevel[level.id].includes(word)) continue
+    state.usedByLevel[level.id].push(word)
+  }
+  state.recentWords = []
+  save(state)
 }
 
 function setLevel(levelId) {
@@ -353,10 +375,8 @@ function scheduleAdvance() {
 
 function beginMini() {
   if (!session) return
-  const state = load()
-  const level = getLevel(state.settings.levelId)
-  const used = session.queue.map((word) => word.word)
-  const extra = pickWords(level, MINI_SIZE, [...state.recentWords, ...used])
+  const level = getLevel(load().settings.levelId)
+  const extra = drawWords(level, MINI_SIZE)
   if (!startMini(session, extra)) finishSession()
   else render()
 }
@@ -499,7 +519,7 @@ function speakIfEnabled() {
   if (!state.settings.tts || !session) return
   if (voiceState === 'missing' || voiceState === 'unsupported') return
   const item = currentItem(session)
-  if (item) speakWord(item.word)
+  if (item) speakWord(item.word, item.syllables)
 }
 
 function selectedWhen() {

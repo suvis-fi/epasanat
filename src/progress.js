@@ -19,6 +19,7 @@ export function load() {
       xp: Number.isFinite(data.xp) ? data.xp : 0,
       sessions: Array.isArray(data.sessions) ? data.sessions : [],
       recentWords: Array.isArray(data.recentWords) ? data.recentWords.filter((word) => typeof word === 'string') : [],
+      usedByLevel: normalizeUsedByLevel(data.usedByLevel),
       unlocks: Array.from(new Set(['paper', ...unlocks])),
       settings: {
         tts: data.settings?.tts !== false,
@@ -84,11 +85,17 @@ export function completeSession({ levelId, results, durationMs, scored }) {
   })
   const cutoff = Date.now() - 120 * 24 * 60 * 60 * 1000
   state.sessions = state.sessions.filter((session) => new Date(session.at).getTime() >= cutoff)
-  state.recentWords = [...results.map((result) => result.word), ...state.recentWords].slice(0, 48)
   state.lastResult = { levelId, accuracy: scored.accuracy, at: new Date().toISOString() }
   const unlocked = grantUnlocks(state)
   save(state)
   return { xp: state.xp, unlocked, weekCount: weekCount(state) }
+}
+
+export function markUsed(levelId, usedNext) {
+  const state = load()
+  state.usedByLevel[levelId] = usedNext
+  save(state)
+  return state
 }
 
 export function award(amount) {
@@ -149,11 +156,25 @@ function grantUnlocks(state) {
   return fresh
 }
 
+function normalizeUsedByLevel(value) {
+  const used = emptyUsedByLevel()
+  if (!value || typeof value !== 'object') return used
+  for (const id of Object.keys(used)) {
+    if (Array.isArray(value[id])) used[id] = value[id].filter((word) => typeof word === 'string')
+  }
+  return used
+}
+
+function emptyUsedByLevel() {
+  return { helppo: [], keski: [], haastava: [], pidempi: [] }
+}
+
 function fresh() {
   return {
     xp: 0,
     sessions: [],
     recentWords: [],
+    usedByLevel: emptyUsedByLevel(),
     unlocks: ['paper'],
     settings: {
       tts: true,
