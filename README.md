@@ -1,5 +1,7 @@
 # Epäsanat
 
+Treenaa epäsanoja lukemisen sujuvoittamiseksi.
+
 Suomenkielinen web-sovellus epäsanojen lukemiseen. Kohderyhmä: oppilaat, joilla on lukivaikeus (myös ADHD). Ei kirjautumista.
 
 ## Päätökset (V1)
