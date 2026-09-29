@@ -103,5 +103,5 @@ export function startWord(session, now = Date.now()) {
 }
 
 function copyWord(word) {
-  return { word: word.word, syllables: [...word.syllables] }
+  return { word: word.word, syllables: [...word.syllables], real: Boolean(word.real) }
 }

@@ -1,14 +1,16 @@
 import sets from './content/sets.json' with { type: 'json' }
+import realWords from './content/real-words.json' with { type: 'json' }
 
 export function getLevels() {
-  return sets.levels
+  return sets.levels.map(withRealWords)
 }
 
 export function getLevel(id) {
-  return sets.levels.find((level) => level.id === id) || sets.levels[0]
+  return getLevels().find((level) => level.id === id) || withRealWords(sets.levels[0])
 }
 
 export function pickWords(level, count, used = []) {
+  if (count <= 0) return { words: [], usedNext: used }
   const usedSet = new Set(used)
   const fresh = level.words.filter((word) => !usedSet.has(word.word))
   if (fresh.length >= count) {
@@ -25,6 +27,36 @@ export function pickWords(level, count, used = []) {
   const recycled = shuffle(recycledPool).slice(0, count - pickedFresh.length)
   const words = [...pickedFresh, ...recycled]
   return { words, usedNext: words.map((word) => word.word) }
+}
+
+export function buildRound({ level, count, usedPseudo = [], usedReal = [], missed = [], includeReal = false }) {
+  const review = missed.slice(0, 2)
+  const reviewNames = new Set(review.map((word) => word.word))
+  let realPick = { words: [], usedNext: usedReal }
+  if (includeReal && level.realWords?.length) {
+    const realCount = Math.min(2, Math.max(0, count - review.length))
+    realPick = pickWords(
+      { words: level.realWords },
+      realCount,
+      usedReal.filter((word) => !reviewNames.has(word)),
+    )
+    realPick.words = realPick.words.filter((word) => !reviewNames.has(word.word))
+  }
+  const pseudoPick = pickWords(level, Math.max(0, count - review.length - realPick.words.length), usedPseudo)
+  return {
+    words: shuffle([...review, ...realPick.words, ...pseudoPick.words]),
+    usedNext: pseudoPick.usedNext,
+    usedRealNext: realPick.usedNext,
+  }
+}
+
+function withRealWords(level) {
+  if (level.id !== realWords.levelId) return level
+  return {
+    ...level,
+    blurb: 'Kaksi selvää tavua. Mukana myös oikeita sanoja.',
+    realWords: realWords.words,
+  }
 }
 
 function shuffle(list) {

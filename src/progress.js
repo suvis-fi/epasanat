@@ -20,6 +20,8 @@ export function load() {
       sessions: Array.isArray(data.sessions) ? data.sessions : [],
       recentWords: Array.isArray(data.recentWords) ? data.recentWords.filter((word) => typeof word === 'string') : [],
       usedByLevel: normalizeUsedByLevel(data.usedByLevel),
+      usedRealByLevel: normalizeUsedByLevel(data.usedRealByLevel),
+      missedByLevel: normalizeMissed(data.missedByLevel),
       unlocks: Array.from(new Set(['paper', ...unlocks])),
       settings: {
         tts: data.settings?.tts !== false,
@@ -91,9 +93,26 @@ export function completeSession({ levelId, results, durationMs, scored }) {
   return { xp: state.xp, unlocked, weekCount: weekCount(state) }
 }
 
-export function markUsed(levelId, usedNext) {
+export function markUsed(levelId, usedNext, real = false) {
   const state = load()
-  state.usedByLevel[levelId] = usedNext
+  const key = real ? 'usedRealByLevel' : 'usedByLevel'
+  state[key][levelId] = usedNext
+  save(state)
+  return state
+}
+
+export function rememberMisses(levelId, results) {
+  const state = load()
+  const current = new Map((state.missedByLevel[levelId] || []).map((item) => [item.word, { ...item }]))
+  const seen = new Set(results.map((result) => result.word))
+  for (const [word, item] of current) {
+    if (!seen.has(word) && item.wait > 0) item.wait -= 1
+  }
+  for (const result of results) {
+    if (result.yes) current.delete(result.word)
+    else current.set(result.word, { word: result.word, wait: 1 })
+  }
+  state.missedByLevel[levelId] = [...current.values()]
   save(state)
   return state
 }
@@ -156,6 +175,18 @@ function grantUnlocks(state) {
   return fresh
 }
 
+function normalizeMissed(value) {
+  const missed = emptyUsedByLevel()
+  if (!value || typeof value !== 'object') return missed
+  for (const id of Object.keys(missed)) {
+    if (!Array.isArray(value[id])) continue
+    missed[id] = value[id]
+      .filter((item) => item && typeof item.word === 'string')
+      .map((item) => ({ word: item.word, wait: Number.isFinite(item.wait) ? item.wait : 0 }))
+  }
+  return missed
+}
+
 function normalizeUsedByLevel(value) {
   const used = emptyUsedByLevel()
   if (!value || typeof value !== 'object') return used
@@ -175,6 +206,8 @@ function fresh() {
     sessions: [],
     recentWords: [],
     usedByLevel: emptyUsedByLevel(),
+    usedRealByLevel: emptyUsedByLevel(),
+    missedByLevel: emptyUsedByLevel(),
     unlocks: ['paper'],
     settings: {
       tts: true,

@@ -95,6 +95,7 @@ export function practiceView(vm) {
     <div class="stage">
       <h1 class="word">${esc(vm.word)}</h1>
       ${syllables}
+      ${vm.showReal ? '<p class="real">Oikea sana</p>' : ''}
       ${vm.phase === 'read' ? `<div class="gate" aria-hidden="true"><span class="gate-fill" style="--p:${vm.gateProgress};animation-delay:-${vm.gateElapsed}ms"></span></div><p class="hint">${vm.gateOpen ? 'Voit jatkaa, kun olet lukenut.' : 'Lue rauhassa.'}</p>` : ''}
       ${vm.voiceMissing ? '<p class="muted center">Kuuntelu ei toimi tällä laitteella. Katso tavut.</p>' : ''}
       ${feedback}

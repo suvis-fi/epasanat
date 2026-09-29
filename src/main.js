@@ -1,6 +1,6 @@
 import './style.css'
 import { FEEDBACK_MS, GATE_MS, MINI_SIZE, ROUND_SIZE, THEME_NAMES, XP } from './constants.js'
-import { getLevel, getLevels, pickWords } from './content.js'
+import { buildRound, getLevel, getLevels } from './content.js'
 import {
   activeTheme,
   award,
@@ -8,6 +8,7 @@ import {
   completeSession,
   load,
   markUsed,
+  rememberMisses,
   save,
   scoreSession,
   suggestLevel,
@@ -204,6 +205,7 @@ function practiceModel() {
     voiceMissing: session.phase === 'check' && state.settings.tts && !heardModel,
     question: heardModel ? 'Menikö samoin?' : 'Menikö oikein?',
     feedbackYes: session.feedbackYes,
+    showReal: Boolean(item.real) && (session.phase === 'check' || session.phase === 'feedback'),
   }
 }
 
@@ -277,7 +279,7 @@ function settingsModel() {
 function startPractice() {
   const state = load()
   const level = getLevel(state.settings.levelId)
-  const words = drawWords(level, ROUND_SIZE)
+  const words = drawWords(level, ROUND_SIZE, true)
   if (!words.length) return
   session = createSession(words)
   ending = null
@@ -286,11 +288,29 @@ function startPractice() {
   render()
 }
 
-function drawWords(level, count) {
+function drawWords(level, count, includeReal) {
   const state = load()
-  const pick = pickWords(level, count, state.usedByLevel[level.id] || [])
-  markUsed(level.id, pick.usedNext)
-  return pick.words
+  const missed = includeReal
+    ? (state.missedByLevel[level.id] || [])
+      .filter((item) => item.wait <= 0)
+      .map((item) => findWord(level, item.word))
+      .filter(Boolean)
+    : []
+  const round = buildRound({
+    level,
+    count,
+    usedPseudo: state.usedByLevel[level.id] || [],
+    usedReal: state.usedRealByLevel[level.id] || [],
+    missed,
+    includeReal,
+  })
+  markUsed(level.id, round.usedNext)
+  if (includeReal) markUsed(level.id, round.usedRealNext, true)
+  return round.words
+}
+
+function findWord(level, word) {
+  return [...level.words, ...(level.realWords || [])].find((item) => item.word === word) || null
 }
 
 function migrateRecentWords() {
@@ -397,6 +417,7 @@ function finishSession() {
     durationMs,
     scored,
   })
+  rememberMisses(level.id, session.results)
   ending = {
     levelId: level.id,
     levelName: level.name,
