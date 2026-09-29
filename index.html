@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3efe4" />
+    <title>Epäsanat</title>
+    <style>
+      #live{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);border:0}
+    </style>
+    <script>
+      try {
+        const raw = localStorage.getItem('epasanat.v1')
+        const theme = raw && JSON.parse(raw).settings.theme
+        if (theme === 'meri' || theme === 'ilta') document.documentElement.dataset.theme = theme
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="live" aria-live="polite"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

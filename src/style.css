@@ -1,0 +1,357 @@
+:root {
+  --bg: #f3efe4;
+  --ink: #1c1915;
+  --muted: #5e574c;
+  --accent: #0e6b54;
+  --accent-ink: #f4fbf8;
+  --card: #fffdf8;
+  --line: #e3dac8;
+  --soft: #efe6d6;
+  color-scheme: light;
+  font: 18px/1.45 Verdana, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+:root[data-theme="meri"] {
+  --bg: #e5f2f4;
+  --ink: #102226;
+  --muted: #3e5960;
+  --accent: #0b6e86;
+  --accent-ink: #f4fbfc;
+  --card: #f7fbfc;
+  --line: #c5dde3;
+  --soft: #d5ebef;
+}
+
+:root[data-theme="ilta"] {
+  --bg: #161513;
+  --ink: #f6f1e8;
+  --muted: #c9bfb0;
+  --accent: #e4b15a;
+  --accent-ink: #1c1408;
+  --card: #221f1b;
+  --line: #3a342c;
+  --soft: #2a2622;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--bg);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.shell {
+  width: min(28rem, 100%);
+  margin: 0 auto;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: max(1.25rem, env(safe-area-inset-top)) 1.25rem calc(1.5rem + env(safe-area-inset-bottom));
+}
+
+.practice { gap: 1rem; }
+
+.brand,
+.step,
+.xp,
+.hint,
+.field {
+  margin: 0;
+  color: var(--muted);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 7vw, 2.4rem);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin: 0.4rem 0 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.lead,
+p { margin: 0; }
+
+.lead { color: var(--muted); }
+
+.word {
+  font-size: clamp(2.5rem, 12vw, 4.2rem);
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.syllables {
+  margin: 0.8rem 0 0;
+  text-align: center;
+  font-size: clamp(1.5rem, 6vw, 2.15rem);
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 2.5rem;
+}
+
+.stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stack,
+.start-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.start-block { margin-top: 0.4rem; }
+
+.primary,
+.secondary,
+.button {
+  min-height: 3.25rem;
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 2px solid var(--accent);
+}
+
+.secondary,
+.button.secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 2px solid var(--line);
+}
+
+.ghost {
+  align-self: flex-start;
+  min-height: 2.75rem;
+  padding: 0.35rem 0.1rem;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+}
+
+.back { margin-bottom: 0.2rem; }
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.4rem;
+}
+
+.week {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--muted);
+}
+
+.dot {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+}
+
+.dot.on { background: var(--accent); }
+
+.block { display: flex; flex-direction: column; gap: 0.55rem; }
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chips button {
+  min-height: 2.75rem;
+  border-radius: 999px;
+  border: 2px solid var(--line);
+  background: transparent;
+  padding: 0.4rem 0.85rem;
+}
+
+.chips button.is-on {
+  border-color: var(--accent);
+  background: var(--soft);
+}
+
+.muted { color: var(--muted); }
+.center { text-align: center; }
+
+.note,
+.note-line {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.gate {
+  height: 0.35rem;
+  margin-top: 1.4rem;
+  background: var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.gate-fill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--accent);
+  transform: scaleX(var(--p));
+  transform-origin: left center;
+  animation: fill 2500ms linear forwards;
+}
+
+.hint { text-align: center; margin-top: 0.7rem; }
+
+.question {
+  text-align: center;
+  font-size: 1.15rem;
+  margin-top: 0.4rem;
+}
+
+.feedback {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.result {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.pills { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+
+.pills span {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: var(--soft);
+}
+
+.xp-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.xp-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.total { font-size: 1.15rem; font-weight: 700; }
+
+textarea,
+input[type="tel"],
+input[type="date"],
+input[type="time"] {
+  width: 100%;
+  border: 2px solid var(--line);
+  background: var(--card);
+  border-radius: 0.9rem;
+  padding: 0.75rem 0.85rem;
+}
+
+textarea { resize: vertical; line-height: 1.4; }
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 3rem;
+}
+
+.toggle input { width: 1.3rem; height: 1.3rem; accent-color: var(--accent); }
+
+.when-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+
+.when-fields label,
+.field { display: flex; flex-direction: column; gap: 0.35rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .gate-fill { animation: none; }
+}
+
+@keyframes fill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
