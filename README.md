@@ -2,6 +2,8 @@
 
 Treenaa epäsanoja lukemisen sujuvoittamiseksi.
 
+Sivu: https://epasanat.vercel.app/
+
 Suomenkielinen web-sovellus epäsanojen lukemiseen. Kohderyhmä: oppilaat, joilla on lukivaikeus (myös ADHD). Ei kirjautumista.
 
 ## Päätökset (V1)

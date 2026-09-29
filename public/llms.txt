@@ -1,0 +1,10 @@
+# Epäsanat
+
+> Ilmainen suomenkielinen lukiharjoitus. Lue epäsanoja ääneen rauhallisesti, ilman kirjautumista.
+
+Epäsanat on verkkosivu nuorille, joilla on lukivaikeus. Harjoitus kestää noin kolme minuuttia. Sanat ovat enimmäkseen epäsanoja; Helppo-tasolla on myös oikeita sanoja. Edistyminen säilyy vain omassa selaimessa. Tekijä on Suvi Lindfors.
+
+## Sivu
+
+- [Epäsanat](https://epasanat.vercel.app/): aloita harjoitus selaimessa
+- Palaute: suvis@iki.fi

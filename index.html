@@ -5,7 +5,29 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f3efe4" />
-    <title>Epäsanat</title>
+    <title>Epäsanat — treenaa epäsanoja lukemisen sujuvoittamiseksi</title>
+    <meta name="description" content="Ilmainen suomenkielinen lukiharjoitus. Lue epäsanoja ääneen rauhallisesti, ilman kirjautumista. Nuorille, joilla on lukivaikeus." />
+    <meta name="author" content="Suvi Lindfors" />
+    <link rel="canonical" href="https://epasanat.vercel.app/" />
+    <meta property="og:title" content="Epäsanat — treenaa epäsanoja lukemisen sujuvoittamiseksi" />
+    <meta property="og:description" content="Ilmainen suomenkielinen lukiharjoitus. Lue epäsanoja ääneen rauhallisesti, ilman kirjautumista. Nuorille, joilla on lukivaikeus." />
+    <meta property="og:url" content="https://epasanat.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fi_FI" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Epäsanat",
+        "url": "https://epasanat.vercel.app/",
+        "inLanguage": "fi",
+        "applicationCategory": "EducationalApplication",
+        "description": "Ilmainen suomenkielinen lukiharjoitus. Lue epäsanoja ääneen rauhallisesti, ilman kirjautumista. Nuorille, joilla on lukivaikeus.",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "author": { "@type": "Person", "name": "Suvi Lindfors", "email": "suvis@iki.fi" }
+      }
+    </script>
     <style>
       #live{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);border:0}
     </style>
@@ -18,7 +40,14 @@
     </script>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <main class="shell">
+        <p class="brand">Epäsanat</p>
+        <h1>Lue epäsanoja ääneen.</h1>
+        <p>Epäsanat on ilmainen suomenkielinen lukiharjoitus nuorille, joilla on lukivaikeus. Lue epäsanoja ääneen rauhallisesti. Harjoitus kestää noin kolme minuuttia, eikä siihen tarvitse kirjautua. Tiedot pysyvät omassa selaimessa.</p>
+        <p>© Suvi Lindfors · Palaute: <a href="mailto:suvis@iki.fi">suvis@iki.fi</a></p>
+      </main>
+    </div>
     <div id="live" aria-live="polite"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
