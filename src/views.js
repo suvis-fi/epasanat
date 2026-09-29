@@ -31,6 +31,7 @@ export function homeView(vm) {
     </section>
     ${vm.voiceNote ? `<p class="muted">${esc(vm.voiceNote)}</p>` : ''}
     <button class="ghost" type="button" data-action="settings">Asetukset</button>
+    ${siteFooter()}
   </main>`
 }
 
@@ -45,6 +46,7 @@ export function practiceView(vm) {
         <button class="primary" type="button" data-action="quit-cancel">Jatka lukemista</button>
         <button class="secondary" type="button" data-action="quit-confirm">Poistu</button>
       </div>
+      ${siteFooter()}
     </main>`
   }
 
@@ -59,6 +61,7 @@ export function practiceView(vm) {
         <button class="primary" type="button" data-action="mini">Vielä mini (3 sanaa)</button>
         <button class="secondary" type="button" data-action="finish">Lopeta</button>
       </div>
+      ${siteFooter()}
     </main>`
   }
 
@@ -101,6 +104,7 @@ export function practiceView(vm) {
       ${feedback}
     </div>
     ${actions}
+    ${siteFooter()}
   </main>`
 }
 
@@ -126,6 +130,7 @@ export function summaryView(vm) {
     <div class="stack">
       <button class="primary" type="button" data-action="to-report">Jatka</button>
     </div>
+    ${siteFooter()}
   </main>`
 }
 
@@ -162,6 +167,7 @@ export function reportView(vm) {
       ${nextStep}
       <button class="ghost" type="button" data-action="skip-report">Ei nyt</button>
     </div>
+    ${siteFooter()}
   </main>`
 }
 
@@ -177,6 +183,7 @@ export function remindView(vm) {
       <a class="button secondary" href="${esc(vm.googleUrl)}" target="_blank" rel="noopener" data-action="google">Avaa Google-kalenteri</a>
       <button class="ghost" type="button" data-action="home">${vm.remindRewarded ? 'Valmis' : 'Ei nyt'}</button>
     </div>
+    ${siteFooter()}
   </main>`
 }
 
@@ -197,7 +204,15 @@ export function settingsView(vm) {
     <input id="phone" type="tel" inputmode="tel" autocomplete="off" maxlength="20" placeholder="040 123 4567" value="${esc(vm.phone)}">
     <p class="muted">Vapaaehtoinen. Numero pysyy vain tässä laitteessa.</p>
     ${themes}
+    ${siteFooter()}
   </main>`
+}
+
+function siteFooter() {
+  return `<footer class="site-foot">
+    <p>© Suvi Lindfors</p>
+    <p>Palaute: <a href="mailto:suvis@iki.fi">suvis@iki.fi</a></p>
+  </footer>`
 }
 
 function dots(count, goal) {
