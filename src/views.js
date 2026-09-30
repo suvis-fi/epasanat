@@ -200,9 +200,6 @@ export function settingsView(vm) {
     </label>
     <p class="muted">Sovellus lukee sanan ääneen, kun painat Valmis.</p>
     ${vm.voiceNote ? `<p class="muted">${esc(vm.voiceNote)}</p>` : ''}
-    <label class="field" for="phone">Vanhemman WhatsApp</label>
-    <input id="phone" type="tel" inputmode="tel" autocomplete="off" maxlength="20" placeholder="040 123 4567" value="${esc(vm.phone)}">
-    <p class="muted">Vapaaehtoinen. Numero pysyy vain tässä laitteessa.</p>
     ${themes}
     ${siteFooter()}
   </main>`

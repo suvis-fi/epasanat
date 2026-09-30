@@ -123,8 +123,6 @@ function onChange(event) {
   if (target.id === 'tts') {
     updateSettings({ tts: target.checked })
     render()
-  } else if (target.id === 'phone') {
-    updateSettings({ parentPhone: target.value.trim() })
   } else if (target.id === 'custom-date' && ending) {
     ending.customDate = target.value
     render()
@@ -236,7 +234,7 @@ function reportModel() {
   const text = reportText(nextLabel)
   return {
     text,
-    waUrl: whatsAppUrl(text, load().settings.parentPhone),
+    waUrl: whatsAppUrl(text),
     next: ending.next,
     customDate: ending.customDate,
     customTime: ending.customTime,
@@ -264,7 +262,6 @@ function settingsModel() {
   const themes = state.unlocks.filter((id) => THEME_NAMES[id])
   return {
     tts: state.settings.tts,
-    phone: state.settings.parentPhone,
     voiceNote: voiceNote(),
     themes: themes.length > 1
       ? themes.map((id) => ({

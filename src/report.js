@@ -50,18 +50,6 @@ export function buildReport({
   return lines.join('\n')
 }
 
-export function normalizePhone(raw) {
-  let digits = String(raw || '').replace(/\D/g, '')
-  if (digits.startsWith('00')) digits = digits.slice(2)
-  if (!digits) return ''
-  if (digits.startsWith('3580')) return `358${digits.slice(4)}`
-  if (digits.startsWith('358')) return digits
-  if (digits.startsWith('0')) return `358${digits.slice(1)}`
-  return digits
-}
-
-export function whatsAppUrl(text, phone) {
-  const digits = normalizePhone(phone)
-  const base = digits ? `https://wa.me/${digits}` : 'https://wa.me/'
-  return `${base}?text=${encodeURIComponent(text)}`
+export function whatsAppUrl(text) {
+  return `https://wa.me/?text=${encodeURIComponent(text)}`
 }
