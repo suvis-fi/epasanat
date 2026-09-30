@@ -210,6 +210,7 @@ export function settingsView(vm) {
 
 function siteFooter() {
   return `<footer class="site-foot">
+    <p><a href="/miksi-epasanat">Miksi epäsanat?</a></p>
     <p>© Suvi Lindfors</p>
     <p>Palaute: <a href="mailto:suvis@iki.fi">suvis@iki.fi</a></p>
   </footer>`

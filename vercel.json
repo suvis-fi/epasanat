@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/miksi-epasanat", "destination": "/miksi-epasanat/index.html" }
+  ]
+}

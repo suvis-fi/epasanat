@@ -7,4 +7,5 @@ Epäsanat on verkkosivu nuorille, joilla on lukivaikeus. Harjoitus kestää noin
 ## Sivu
 
 - [Epäsanat](https://epasanat.vercel.app/): aloita harjoitus selaimessa
+- [Miksi epäsanat auttavat](https://epasanat.vercel.app/miksi-epasanat): mitä epäsanat ovat ja miksi niiden lukeminen auttaa lukivaikeudessa ja ADHD:hen liittyvässä kiireessä lukea
 - Palaute: suvis@iki.fi
