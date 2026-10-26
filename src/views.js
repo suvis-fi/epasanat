@@ -42,7 +42,10 @@ export function homeView(vm) {
       <p><strong>Tallennetaanko tietoja?</strong> Tiedot tallentuvat vain omaan selaimeesi, eikä niitä lähetetä minnekään.</p>
       <p><a href="/miksi-epasanat">Miksi hölynpölysanojen lukeminen auttaa lukivaikeudessa ja ADHD:ssa</a></p>
       <p><a href="/vanhemmille-ja-opettajille">Ohje vanhemmille ja opettajille</a></p>
+      <p><a href="/vanhemmille-ja-opettajille#kotivalikko">Näin saat sivun kotivalikkoon</a></p>
       <p><a href="/ukk">Usein kysyttyä</a></p>
+      <p><a href="/epasanalista">Epäsanalista tulostettavana</a></p>
+      <p><a href="/epasanojen-lukeminen-kotona">Epäsanojen lukeminen kotona</a></p>
     </section>
     ${siteFooter({ why: false })}
   </main>`

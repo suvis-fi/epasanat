@@ -2,6 +2,8 @@
   "rewrites": [
     { "source": "/miksi-epasanat", "destination": "/miksi-epasanat/index.html" },
     { "source": "/vanhemmille-ja-opettajille", "destination": "/vanhemmille-ja-opettajille/index.html" },
-    { "source": "/ukk", "destination": "/ukk/index.html" }
+    { "source": "/ukk", "destination": "/ukk/index.html" },
+    { "source": "/epasanalista", "destination": "/epasanalista/index.html" },
+    { "source": "/epasanojen-lukeminen-kotona", "destination": "/epasanojen-lukeminen-kotona/index.html" }
   ]
 }

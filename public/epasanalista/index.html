@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3efe4" />
+    <title>Epäsanalista tulostettavana – Epäsanat-lukiharjoitus</title>
+    <meta name="description" content="Tulostettava epäsanalista opettajille ja kotiin. Suomen kielen rakenteen mukaisia pseudosanoja tasoittain, lukivaikeuden ja dysleksian lukiharjoitukseen." />
+    <meta name="author" content="Suvi Lindfors" />
+    <link rel="canonical" href="https://epasanat.vercel.app/epasanalista" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content="Epäsanalista tulostettavana – Epäsanat-lukiharjoitus" />
+    <meta property="og:description" content="Tulostettava epäsanalista opettajille ja kotiin. Suomen kielen rakenteen mukaisia pseudosanoja tasoittain, lukivaikeuden ja dysleksian lukiharjoitukseen." />
+    <meta property="og:url" content="https://epasanat.vercel.app/epasanalista" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="fi_FI" />
+    <meta property="og:image" content="https://epasanat.vercel.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Epäsanat. Lue epäsanoja ääneen." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://epasanat.vercel.app/og.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Epäsanalista tulostettavana",
+        "description": "Tulostettava epäsanalista opettajille ja kotiin. Suomen kielen rakenteen mukaisia pseudosanoja tasoittain, lukivaikeuden ja dysleksian lukiharjoitukseen.",
+        "inLanguage": "fi",
+        "datePublished": "2026-10-26",
+        "author": { "@type": "Person", "name": "Suvi Lindfors" },
+        "mainEntityOfPage": "https://epasanat.vercel.app/epasanalista"
+      }
+    </script>
+    <style>
+      :root {
+        --bg: #f3efe4;
+        --ink: #1c1915;
+        --muted: #5e574c;
+        --accent: #0e6b54;
+        --accent-ink: #f4fbf8;
+        --card: #fffdf8;
+        --line: #e3dac8;
+        color-scheme: light;
+        font: 18px/1.6 Verdana, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); }
+      .shell {
+        width: min(40rem, 100%);
+        margin: 0 auto;
+        padding: max(1.25rem, env(safe-area-inset-top)) 1.25rem calc(2rem + env(safe-area-inset-bottom));
+      }
+      a { color: var(--accent); }
+      .brand { margin: 0 0 1.2rem; }
+      .brand a { color: var(--muted); text-decoration: none; }
+      h1 { margin: 0 0 1rem; font-size: clamp(1.7rem, 5vw, 2.15rem); line-height: 1.25; font-weight: 700; }
+      h2 { margin: 1.6rem 0 0.15rem; font-size: 1.25rem; line-height: 1.3; }
+      p { margin: 0.75rem 0; }
+      .blurb { margin: 0 0 0.35rem; color: var(--muted); }
+      .words {
+        list-style: none;
+        margin: 0.2rem 0 0.4rem;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.55rem 1.5rem;
+      }
+      .words li { break-inside: avoid; }
+      .word {
+        display: block;
+        font-size: 1.55rem;
+        line-height: 1.25;
+        font-weight: 700;
+      }
+      .syll {
+        display: block;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.3;
+      }
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 3.25rem;
+        margin-top: 0.6rem;
+        padding: 0.7rem 1.15rem;
+        border: 0;
+        border-radius: 999px;
+        background: var(--accent);
+        color: var(--accent-ink);
+        font: inherit;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .print-only { display: none; }
+      footer { margin-top: 2rem; color: var(--muted); font-size: 0.85rem; }
+      :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+      @media (max-width: 36rem) {
+        .words { grid-template-columns: 1fr; }
+      }
+      @page { size: A4; margin: 14mm; }
+      @media print {
+        :root { color: #000; background: #fff; }
+        body { background: #fff; color: #000; }
+        .shell { width: auto; max-width: none; margin: 0; padding: 0; }
+        .noprint { display: none !important; }
+        .print-only { display: block; margin: 0 0 0.6rem; color: #333; font-size: 10pt; }
+        a { color: #000; text-decoration: none; }
+        h1 { font-size: 18pt; }
+        h2 { font-size: 14pt; break-after: avoid; }
+        .blurb { color: #333; font-size: 11pt; break-after: avoid; }
+        .words { grid-template-columns: 1fr 1fr; gap: 2.5mm 10mm; }
+        .word { font-size: 16pt; }
+        .syll { color: #333; font-size: 11pt; }
+        .words li { break-inside: avoid; page-break-inside: avoid; }
+        footer.print-only { margin-top: 8mm; font-size: 9pt; color: #333; }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="shell">
+      <p class="brand noprint"><a href="/">Epäsanat</a></p>
+      <h1>Epäsanalista tulostettavana</h1>
+      <p>Epäsanat eli pseudosanat ovat keksittyjä sanoja, jotka noudattavat suomen kielen rakennetta mutta eivät tarkoita mitään. Esimerkiksi hale, seläne ja vöökä näyttävät suomelta, mutta niitä ei voi tunnistaa muistista, joten ne pitää lukea tavu tavulta.</p>
+      <p>Lista on opettajille ja vanhemmille ääneen lukemisen harjoitteluun kotona tai koulussa. Sanat on poimittu Epäsanat-harjoituksen tasoista Helppo, Keski, Haastava ja Pidempi: jokaiselta tasolta on 20 esimerkkiä. Sovellus arpoo sanat laajemmasta joukosta, joten tämä ei ole koko sanasto. Tavuviivat, esimerkiksi ha-le, helpottavat ääneen lukemista.</p>
+      <p>Harjoitus ei korvaa lukivaikeuden tutkimusta, diagnoosia eikä ammattilaisen tukea.</p>
+      <p class="noprint"><button class="button" type="button" onclick="window.print()">Tulosta tämä sivu</button></p>
+      <p class="noprint"><a href="/epasanalista.pdf">Lataa PDF opettajille</a></p>
+
+      <section>
+        <h2>Helppo</h2>
+        <p class="blurb">Kaksi selvää tavua. 20 esimerkkiä harjoituksesta.</p>
+        <ul class="words">
+          <li><span class="word">hale</span><span class="syll">ha-le</span></li>
+          <li><span class="word">hälö</span><span class="syll">hä-lö</span></li>
+          <li><span class="word">jinö</span><span class="syll">ji-nö</span></li>
+          <li><span class="word">jäpe</span><span class="syll">jä-pe</span></li>
+          <li><span class="word">kivä</span><span class="syll">ki-vä</span></li>
+          <li><span class="word">leja</span><span class="syll">le-ja</span></li>
+          <li><span class="word">lämi</span><span class="syll">lä-mi</span></li>
+          <li><span class="word">motu</span><span class="syll">mo-tu</span></li>
+          <li><span class="word">möme</span><span class="syll">mö-me</span></li>
+          <li><span class="word">nino</span><span class="syll">ni-no</span></li>
+          <li><span class="word">näsä</span><span class="syll">nä-sä</span></li>
+          <li><span class="word">poje</span><span class="syll">po-je</span></li>
+          <li><span class="word">ralo</span><span class="syll">ra-lo</span></li>
+          <li><span class="word">roru</span><span class="syll">ro-ru</span></li>
+          <li><span class="word">sepä</span><span class="syll">se-pä</span></li>
+          <li><span class="word">sänä</span><span class="syll">sä-nä</span></li>
+          <li><span class="word">tino</span><span class="syll">ti-no</span></li>
+          <li><span class="word">tämö</span><span class="syll">tä-mö</span></li>
+          <li><span class="word">voto</span><span class="syll">vo-to</span></li>
+          <li><span class="word">vösy</span><span class="syll">vö-sy</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Keski</h2>
+        <p class="blurb">Kolme tavua. 20 esimerkkiä harjoituksesta.</p>
+        <ul class="words">
+          <li><span class="word">haripi</span><span class="syll">ha-ri-pi</span></li>
+          <li><span class="word">hunese</span><span class="syll">hu-ne-se</span></li>
+          <li><span class="word">jarono</span><span class="syll">ja-ro-no</span></li>
+          <li><span class="word">jyjere</span><span class="syll">jy-je-re</span></li>
+          <li><span class="word">kemopa</span><span class="syll">ke-mo-pa</span></li>
+          <li><span class="word">köröny</span><span class="syll">kö-rö-ny</span></li>
+          <li><span class="word">lulevi</span><span class="syll">lu-le-vi</span></li>
+          <li><span class="word">mesepo</span><span class="syll">me-se-po</span></li>
+          <li><span class="word">myjätä</span><span class="syll">my-jä-tä</span></li>
+          <li><span class="word">navila</span><span class="syll">na-vi-la</span></li>
+          <li><span class="word">nusase</span><span class="syll">nu-sa-se</span></li>
+          <li><span class="word">pepitu</span><span class="syll">pe-pi-tu</span></li>
+          <li><span class="word">päpese</span><span class="syll">pä-pe-se</span></li>
+          <li><span class="word">rorajo</span><span class="syll">ro-ra-jo</span></li>
+          <li><span class="word">seläne</span><span class="syll">se-lä-ne</span></li>
+          <li><span class="word">sötisi</span><span class="syll">sö-ti-si</span></li>
+          <li><span class="word">tureva</span><span class="syll">tu-re-va</span></li>
+          <li><span class="word">velyny</span><span class="syll">ve-ly-ny</span></li>
+          <li><span class="word">vupopi</span><span class="syll">vu-po-pi</span></li>
+          <li><span class="word">vöpyjö</span><span class="syll">vö-py-jö</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Haastava</h2>
+        <p class="blurb">Yhtymiä ja pitkiä äänteitä. 20 esimerkkiä harjoituksesta.</p>
+        <ul class="words">
+          <li><span class="word">haalu</span><span class="syll">haa-lu</span></li>
+          <li><span class="word">hultu</span><span class="syll">hul-tu</span></li>
+          <li><span class="word">jellä</span><span class="syll">jel-lä</span></li>
+          <li><span class="word">jysme</span><span class="syll">jys-me</span></li>
+          <li><span class="word">kesso</span><span class="syll">kes-so</span></li>
+          <li><span class="word">kyyny</span><span class="syll">kyy-ny</span></li>
+          <li><span class="word">lirru</span><span class="syll">lir-ru</span></li>
+          <li><span class="word">marve</span><span class="syll">mar-ve</span></li>
+          <li><span class="word">murva</span><span class="syll">mur-va</span></li>
+          <li><span class="word">möölö</span><span class="syll">möö-lö</span></li>
+          <li><span class="word">nusso</span><span class="syll">nus-so</span></li>
+          <li><span class="word">peksy</span><span class="syll">pek-sy</span></li>
+          <li><span class="word">pömmä</span><span class="syll">pöm-mä</span></li>
+          <li><span class="word">rorti</span><span class="syll">ror-ti</span></li>
+          <li><span class="word">räkky</span><span class="syll">räk-ky</span></li>
+          <li><span class="word">sorro</span><span class="syll">sor-ro</span></li>
+          <li><span class="word">teppä</span><span class="syll">tep-pä</span></li>
+          <li><span class="word">vaavi</span><span class="syll">vaa-vi</span></li>
+          <li><span class="word">vuntu</span><span class="syll">vun-tu</span></li>
+          <li><span class="word">vöökä</span><span class="syll">vöö-kä</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Pidempi</h2>
+        <p class="blurb">Pidempiä sanoja. 20 esimerkkiä harjoituksesta.</p>
+        <ul class="words">
+          <li><span class="word">haanipi</span><span class="syll">haa-ni-pi</span></li>
+          <li><span class="word">hultato</span><span class="syll">hul-ta-to</span></li>
+          <li><span class="word">jaapohe</span><span class="syll">jaa-po-he</span></li>
+          <li><span class="word">jooveji</span><span class="syll">joo-ve-ji</span></li>
+          <li><span class="word">keepöhy</span><span class="syll">kee-pö-hy</span></li>
+          <li><span class="word">kääkinä</span><span class="syll">kää-ki-nä</span></li>
+          <li><span class="word">limpäri</span><span class="syll">lim-pä-ri</span></li>
+          <li><span class="word">löllärä</span><span class="syll">löl-lä-rä</span></li>
+          <li><span class="word">moohama</span><span class="syll">moo-ha-ma</span></li>
+          <li><span class="word">narroha</span><span class="syll">nar-ro-ha</span></li>
+          <li><span class="word">nymmäke</span><span class="syll">nym-mä-ke</span></li>
+          <li><span class="word">piisöpe</span><span class="syll">pii-sö-pe</span></li>
+          <li><span class="word">päppöse</span><span class="syll">päp-pö-se</span></li>
+          <li><span class="word">riihyme</span><span class="syll">rii-hy-me</span></li>
+          <li><span class="word">saspote</span><span class="syll">sas-po-te</span></li>
+          <li><span class="word">syrrömö</span><span class="syll">syr-rö-mö</span></li>
+          <li><span class="word">tessito</span><span class="syll">tes-si-to</span></li>
+          <li><span class="word">täävily</span><span class="syll">tää-vi-ly</span></li>
+          <li><span class="word">vonsajo</span><span class="syll">von-sa-jo</span></li>
+          <li><span class="word">vöntöhe</span><span class="syll">vön-tö-he</span></li>
+        </ul>
+      </section>
+
+      <p class="noprint"><a class="button" href="/">Aloita harjoitus</a></p>
+      <p class="noprint"><a href="/epasanojen-lukeminen-kotona">Epäsanojen lukeminen kotona</a></p>
+      <footer class="noprint">
+        <p>© Suvi Lindfors · Palaute: <a href="mailto:suvis@iki.fi">suvis@iki.fi</a></p>
+      </footer>
+      <footer class="print-only">
+        <p>© Suvi Lindfors · epasanat.vercel.app</p>
+      </footer>
+    </article>
+  </body>
+</html>

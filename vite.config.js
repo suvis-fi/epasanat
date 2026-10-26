@@ -12,6 +12,12 @@ function blogUrl() {
     if (path === '/ukk' || path === '/ukk/') {
       req.url = '/ukk/index.html'
     }
+    if (path === '/epasanalista' || path === '/epasanalista/') {
+      req.url = '/epasanalista/index.html'
+    }
+    if (path === '/epasanojen-lukeminen-kotona' || path === '/epasanojen-lukeminen-kotona/') {
+      req.url = '/epasanojen-lukeminen-kotona/index.html'
+    }
     next()
   }
   return {
