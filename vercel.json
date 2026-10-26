@@ -1,5 +1,7 @@
 {
   "rewrites": [
-    { "source": "/miksi-epasanat", "destination": "/miksi-epasanat/index.html" }
+    { "source": "/miksi-epasanat", "destination": "/miksi-epasanat/index.html" },
+    { "source": "/vanhemmille-ja-opettajille", "destination": "/vanhemmille-ja-opettajille/index.html" },
+    { "source": "/ukk", "destination": "/ukk/index.html" }
   ]
 }
