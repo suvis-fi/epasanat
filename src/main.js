@@ -1,3 +1,4 @@
+import { inject } from '@vercel/analytics'
 import './style.css'
 import { FEEDBACK_MS, GATE_MS, MINI_SIZE, ROUND_SIZE, THEME_NAMES, XP } from './constants.js'
 import { buildRound, getLevel, getLevels } from './content.js'
@@ -49,6 +50,9 @@ import {
   settingsView,
   summaryView,
 } from './views.js'
+import { trackEvent } from './track.js'
+
+inject()
 
 const app = document.querySelector('#app')
 const live = document.querySelector('#live')
@@ -60,6 +64,7 @@ let voiceState = 'unknown'
 let gateTimer = 0
 let feedbackTimer = 0
 let scrollKey = ''
+let practiceEvents = { start: false, done: false }
 
 init()
 
@@ -100,6 +105,7 @@ function onClick(event) {
   else if (action === 'to-report') {
     view = 'report'
     render()
+    if (view === 'report' && ending) notePracticeDone()
   } else if (action === 'next') chooseNext(target.dataset.next)
   else if (action === 'send') {
     event.preventDefault()
@@ -280,9 +286,11 @@ function startPractice() {
   if (!words.length) return
   session = createSession(words)
   ending = null
+  practiceEvents = { start: false, done: false }
   beginSession()
   view = 'practice'
   render()
+  if (session && view === 'practice' && app.querySelector('h1.word')) notePracticeStart()
 }
 
 function drawWords(level, count, includeReal) {
@@ -615,6 +623,18 @@ function announce() {
   else if (view === 'report') text = 'Kerro vanhemmalle.'
   else if (view === 'remind') text = 'Muistutus kalenteriin.'
   if (text && live.textContent !== text) live.textContent = text
+}
+
+function notePracticeStart() {
+  if (practiceEvents.start) return
+  practiceEvents.start = true
+  trackEvent('harjoitus_aloitettu')
+}
+
+function notePracticeDone() {
+  if (practiceEvents.done) return
+  practiceEvents.done = true
+  trackEvent('harjoitus_valmis')
 }
 
 function clearPracticeTimers() {

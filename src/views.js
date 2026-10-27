@@ -32,14 +32,14 @@ export function homeView(vm) {
     ${vm.voiceNote ? `<p class="muted">${esc(vm.voiceNote)}</p>` : ''}
     <button class="ghost" type="button" data-action="settings">Asetukset</button>
     <section class="about">
-      <p class="lead">Epäsanat on ilmainen suomenkielinen lukiharjoitus nuorille, joilla on lukivaikeus (lukihäiriö, dysleksia) tai joiden lukeminen on hidasta ja kiireistä. Lue epäsanoja eli pseudosanoja ääneen rauhallisesti. Harjoitus kestää noin kolme minuuttia, eikä siihen tarvitse kirjautua. Tiedot pysyvät omassa selaimessa.</p>
+      <p class="lead">Epäsanat on ilmainen suomenkielinen lukiharjoitus nuorille, joilla on lukivaikeus (lukihäiriö, dysleksia) tai joiden lukeminen on hidasta ja kiireistä. Lue epäsanoja eli pseudosanoja ääneen rauhallisesti. Harjoitus kestää noin kolme minuuttia, eikä siihen tarvitse kirjautua. Harjoituksen tiedot pysyvät omassa selaimessa.</p>
       <h2>Mitä epäsanat ovat?</h2>
       <p>Epäsanat (pseudosanat, arkikielessä hölynpölysanat) ovat keksittyjä sanoja, jotka noudattavat suomen kielen rakennetta mutta eivät tarkoita mitään, esimerkiksi kiroitas, lumpeva tai sorkaane. Niitä ei voi arvata tutun sanan perusteella, joten ne pitää oikeasti lukea tavu tavulta. Siksi epäsanat harjoittavat juuri lukemisen perustaitoa: kirjainten ja tavujen tarkkaa tunnistamista.</p>
       <h2>Kenelle harjoitus sopii?</h2>
       <p>Harjoitus sopii nuorille, joilla lukeminen on hidasta, työlästä tai kiireistä, esimerkiksi lukivaikeuden tai ADHD:n vuoksi. Harjoitus ei korvaa lukivaikeuden tai ADHD:n tutkimusta, diagnoosia eikä ammattilaisen tukea.</p>
       <p><strong>Onko Epäsanat maksuton?</strong> Kyllä, ilman kirjautumista.</p>
       <p><strong>Kuinka kauan harjoitus kestää?</strong> Noin kolme minuuttia.</p>
-      <p><strong>Tallennetaanko tietoja?</strong> Tiedot tallentuvat vain omaan selaimeesi, eikä niitä lähetetä minnekään.</p>
+      <p><strong>Tallennetaanko tietoja?</strong> Harjoituksen tiedot tallentuvat vain omaan selaimeesi, eikä niitä lähetetä minnekään. Sivusto käyttää Google Analyticsia käyttäjämäärien seuraamiseen, mutta analytiikka ei näe harjoituksessa luettuja sanoja. Lisätietoja: ohje vanhemmille ja opettajille.</p>
       <p><a href="/miksi-epasanat">Miksi hölynpölysanojen lukeminen auttaa lukivaikeudessa ja ADHD:ssa</a></p>
       <p><a href="/vanhemmille-ja-opettajille">Ohje vanhemmille ja opettajille</a></p>
       <p><a href="/vanhemmille-ja-opettajille#kotivalikko">Näin saat sivun kotivalikkoon</a></p>
