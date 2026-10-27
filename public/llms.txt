@@ -2,7 +2,7 @@
 
 > Ilmainen suomenkielinen lukiharjoitus. Lue epäsanoja ääneen rauhallisesti, ilman kirjautumista.
 
-Epäsanat on verkkosivu nuorille, joilla on lukivaikeus. Harjoitus kestää noin kolme minuuttia. Sanat ovat enimmäkseen epäsanoja; Helppo-tasolla on myös oikeita sanoja. Harjoituksen edistyminen säilyy omassa selaimessa. Sivusto käyttää Google Analyticsia käyttäjämäärien seuraamiseen, mutta analytiikka ei näe harjoituksessa luettuja sanoja. Tekijä on Suvi Lindfors.
+Epäsanat on verkkosivu nuorille, joilla on lukivaikeus. Harjoitus kestää noin kolme minuuttia. Sanat ovat enimmäkseen epäsanoja; Helppo-tasolla on myös oikeita sanoja. Harjoituksen edistyminen säilyy omassa selaimessa. Sivusto laskee kävijämääriä evästeettömällä analytiikalla, joka ei seuraa käyttäjää päivästä toiseen eikä näe harjoituksessa luettuja sanoja. Tekijä on Suvi Lindfors.
 
 ## Sivu
 

@@ -11,7 +11,7 @@ export const faq = [
   {
     question: 'Tallennetaanko harjoituksen tietoja?',
     answer:
-      'Harjoituksen tiedot tallentuvat vain omaan selaimeesi, eikä niitä lähetetä minnekään. Sivusto laskee kävijämääriä evästeettömällä analytiikalla, joka ei tunnista yksittäistä käyttäjää eikä näe harjoituksessa luettuja sanoja. Jos lähetät harjoituksen jälkeen WhatsApp-todisteen, päätät itse, lähetätkö sen ja kenelle. Lisätietoja: <a href="/tietosuoja">tietosuoja</a>.',
+      'Harjoituksen tiedot tallentuvat vain omaan selaimeesi, eikä niitä lähetetä minnekään. Sivusto laskee kävijämääriä evästeettömällä analytiikalla, joka ei seuraa käyttäjää päivästä toiseen eikä näe harjoituksessa luettuja sanoja. Jos lähetät harjoituksen jälkeen WhatsApp-todisteen, päätät itse, lähetätkö sen ja kenelle. Lisätietoja: <a href="/tietosuoja">tietosuoja</a>.',
   },
   {
     question: 'Mitä epäsanat ovat?',

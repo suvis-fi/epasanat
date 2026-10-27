@@ -39,7 +39,7 @@ export function homeView(vm) {
       <p>Harjoitus sopii nuorille, joilla lukeminen on hidasta, työlästä tai kiireistä, esimerkiksi lukivaikeuden tai ADHD:n vuoksi. Harjoitus ei korvaa lukivaikeuden tai ADHD:n tutkimusta, diagnoosia eikä ammattilaisen tukea.</p>
       <p><strong>Onko Epäsanat maksuton?</strong> Kyllä, ilman kirjautumista.</p>
       <p><strong>Kuinka kauan harjoitus kestää?</strong> Noin kolme minuuttia.</p>
-      <p><strong>Tallennetaanko tietoja?</strong> Harjoituksen tiedot tallentuvat vain omaan selaimeesi, eikä niitä lähetetä minnekään. Sivusto käyttää Google Analyticsia käyttäjämäärien seuraamiseen, mutta analytiikka ei näe harjoituksessa luettuja sanoja. Lisätietoja: ohje vanhemmille ja opettajille.</p>
+      <p><strong>Tallennetaanko tietoja?</strong> Harjoituksen tiedot tallentuvat vain omaan selaimeesi, eikä niitä lähetetä minnekään. Sivusto laskee kävijämääriä evästeettömällä analytiikalla, joka ei seuraa käyttäjää päivästä toiseen eikä näe harjoituksessa luettuja sanoja. Lisätietoja: ohje vanhemmille ja opettajille.</p>
       <p><a href="/miksi-epasanat">Miksi hölynpölysanojen lukeminen auttaa lukivaikeudessa ja ADHD:ssa</a></p>
       <p><a href="/vanhemmille-ja-opettajille">Ohje vanhemmille ja opettajille</a></p>
       <p><a href="/vanhemmille-ja-opettajille#kotivalikko">Näin saat sivun kotivalikkoon</a></p>
