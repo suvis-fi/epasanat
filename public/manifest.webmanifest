@@ -1,0 +1,13 @@
+{
+  "name": "Epäsanat",
+  "short_name": "Epäsanat",
+  "lang": "fi",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f3efe4",
+  "theme_color": "#f3efe4",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
