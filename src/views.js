@@ -227,8 +227,7 @@ function siteFooter({ why = true } = {}) {
     : ''
   return `<footer class="site-foot">
     ${whyLink}
-    <p>© Suvi Lindfors</p>
-    <p>Palaute: <a href="mailto:suvis@iki.fi">suvis@iki.fi</a></p>
+    <p>© Suvi Lindfors · <a href="/tietosuoja">Tietosuoja</a> · Palaute: <a href="mailto:suvis@iki.fi">suvis@iki.fi</a></p>
   </footer>`
 }
 

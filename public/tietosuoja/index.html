@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3efe4" />
+    <title>Tietosuoja – Epäsanat-lukiharjoitus</title>
+    <meta name="description" content="Näin Epäsanat käsittelee tietoja: harjoituksen tiedot pysyvät omassa selaimessa, sivusto ei aseta evästeitä ja kävijämäärät lasketaan evästeettömällä analytiikalla." />
+    <meta name="author" content="Suvi Lindfors" />
+    <link rel="canonical" href="https://epasanat.vercel.app/tietosuoja" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Epäsanat" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta property="og:title" content="Tietosuoja – Epäsanat-lukiharjoitus" />
+    <meta property="og:description" content="Näin Epäsanat käsittelee tietoja: harjoituksen tiedot pysyvät omassa selaimessa, sivusto ei aseta evästeitä ja kävijämäärät lasketaan evästeettömällä analytiikalla." />
+    <meta property="og:url" content="https://epasanat.vercel.app/tietosuoja" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="fi_FI" />
+    <meta property="og:image" content="https://epasanat.vercel.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Epäsanat. Lue epäsanoja ääneen." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://epasanat.vercel.app/og.png" />
+    <style>
+      :root {
+        --bg: #f3efe4;
+        --ink: #1c1915;
+        --muted: #5e574c;
+        --accent: #0e6b54;
+        --accent-ink: #f4fbf8;
+        --card: #fffdf8;
+        --line: #e3dac8;
+        color-scheme: light;
+        font: 18px/1.6 Verdana, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); }
+      .shell {
+        width: min(40rem, 100%);
+        margin: 0 auto;
+        padding: max(1.25rem, env(safe-area-inset-top)) 1.25rem calc(2rem + env(safe-area-inset-bottom));
+      }
+      a { color: var(--accent); }
+      .brand { margin: 0 0 1.2rem; }
+      .brand a { color: var(--muted); text-decoration: none; }
+      h1 { margin: 0 0 1rem; font-size: clamp(1.7rem, 5vw, 2.15rem); line-height: 1.25; font-weight: 700; }
+      h2 { margin: 2rem 0 0.6rem; font-size: 1.25rem; line-height: 1.3; }
+      p { margin: 0.75rem 0; }
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 3.25rem;
+        margin-top: 0.6rem;
+        padding: 0.7rem 1.15rem;
+        border-radius: 999px;
+        background: var(--accent);
+        color: var(--accent-ink);
+        text-decoration: none;
+      }
+      footer { margin-top: 2rem; color: var(--muted); font-size: 0.85rem; }
+      :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    </style>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body>
+    <article class="shell">
+      <p class="brand"><a href="/">Epäsanat</a></p>
+      <h1>Tietosuoja</h1>
+
+      <h2>Sivuston ylläpitäjä</h2>
+      <p>Suvi Lindfors, suvis@iki.fi</p>
+
+      <h2>Harjoituksen tiedot</h2>
+      <p>Harjoituksen tiedot tallentuvat vain laitteesi selaimeen. Ne eivät lähde sivulta.</p>
+
+      <h2>Kävijämäärät</h2>
+      <p>Sivusto laskee kävijämääriä ja harjoituksen aloituksia ja valmistumisia Vercel Web Analyticsilla. Analytiikka ei käytä evästeitä, ei tunnista yksittäistä käyttäjää eikä näe harjoituksessa luettuja sanoja.</p>
+
+      <h2>Palvelimet</h2>
+      <p>Sivusto toimii Vercelin palvelimilla. Palveluntarjoaja voi käsitellä teknisiä tietoja, kuten IP-osoitetta, sivun toimittamiseksi.</p>
+
+      <h2>WhatsApp</h2>
+      <p>Todiste lähetetään vain, jos nuori itse niin päättää. Viesti kulkee WhatsAppin kautta, ja sivusto ei tallenna sitä.</p>
+
+      <h2>Evästeet</h2>
+      <p>Sivusto ei aseta evästeitä.</p>
+
+      <h2>Kysymykset</h2>
+      <p>suvis@iki.fi</p>
+
+      <p><a class="button" href="/">Aloita harjoitus</a></p>
+      <footer>
+        <p>© Suvi Lindfors · <a href="/tietosuoja">Tietosuoja</a> · Palaute: <a href="mailto:suvis@iki.fi">suvis@iki.fi</a></p>
+      </footer>
+    </article>
+  </body>
+</html>

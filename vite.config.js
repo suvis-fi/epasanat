@@ -33,6 +33,9 @@ function blogUrl() {
     if (path === '/vanhemmille-ja-opettajille' || path === '/vanhemmille-ja-opettajille/') {
       req.url = '/vanhemmille-ja-opettajille/index.html'
     }
+    if (path === '/tietosuoja' || path === '/tietosuoja/') {
+      req.url = '/tietosuoja/index.html'
+    }
     if (path === '/epasanalista' || path === '/epasanalista/') {
       req.url = '/epasanalista/index.html'
     }

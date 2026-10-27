@@ -9,9 +9,9 @@ export const faq = [
       'Yksi harjoituskerta kestää noin kolme minuuttia. Lyhyt kesto on tarkoituksellinen: harjoittelu on helppo aloittaa, ja keskittyminen ei ehdi loppua kesken.',
   },
   {
-    question: 'Tallennetaanko minusta tietoja?',
+    question: 'Tallennetaanko harjoituksen tietoja?',
     answer:
-      'Harjoituksen tiedot tallentuvat vain omaan selaimeesi, eikä niitä lähetetä minnekään. Sivusto käyttää Google Analyticsia käyttäjämäärien seuraamiseen, mutta analytiikka ei näe harjoituksessa luettuja sanoja. Lisätietoja: ohje vanhemmille ja opettajille. Jos lähetät harjoituksen jälkeen WhatsApp-todisteen, päätät itse, lähetätkö sen ja kenelle.',
+      'Harjoituksen tiedot tallentuvat vain omaan selaimeesi, eikä niitä lähetetä minnekään. Sivusto laskee kävijämääriä evästeettömällä analytiikalla, joka ei tunnista yksittäistä käyttäjää eikä näe harjoituksessa luettuja sanoja. Jos lähetät harjoituksen jälkeen WhatsApp-todisteen, päätät itse, lähetätkö sen ja kenelle. Lisätietoja: <a href="/tietosuoja">tietosuoja</a>.',
   },
   {
     question: 'Mitä epäsanat ovat?',
