@@ -36,11 +36,11 @@ export function homeView(vm) {
       <h2>Mitä epäsanat ovat?</h2>
       <p>Epäsanat (pseudosanat, arkikielessä hölynpölysanat) ovat keksittyjä sanoja, jotka noudattavat suomen kielen rakennetta mutta eivät tarkoita mitään, esimerkiksi kiroitas, lumpeva tai sorkaane. Niitä ei voi arvata tutun sanan perusteella, joten ne pitää oikeasti lukea tavu tavulta. Siksi epäsanat harjoittavat juuri lukemisen perustaitoa: kirjainten ja tavujen tarkkaa tunnistamista.</p>
       <h2>Kenelle harjoitus sopii?</h2>
-      <p>Harjoitus sopii nuorille, joilla lukeminen on hidasta, työlästä tai kiireistä, esimerkiksi lukivaikeuden tai ADHD:n vuoksi. Harjoitus ei korvaa lukivaikeuden tai ADHD:n tutkimusta, diagnoosia eikä ammattilaisen tukea.</p>
+      <p>Harjoitus sopii nuorille, joilla lukeminen on hidasta, työlästä tai kiireistä, esimerkiksi lukivaikeuden tai adhd:n vuoksi. Harjoitus ei korvaa lukivaikeuden tai adhd:n tutkimusta, diagnoosia eikä ammattilaisen tukea.</p>
       <p><strong>Onko Epäsanat maksuton?</strong> Kyllä, ilman kirjautumista.</p>
       <p><strong>Kuinka kauan harjoitus kestää?</strong> Noin kolme minuuttia.</p>
       <p><strong>Tallennetaanko tietoja?</strong> Harjoituksen tiedot tallentuvat vain omaan selaimeesi, eikä niitä lähetetä minnekään. Sivusto laskee kävijämääriä evästeettömällä analytiikalla, joka ei seuraa käyttäjää päivästä toiseen eikä näe harjoituksessa luettuja sanoja. Lisätietoja: ohje vanhemmille ja opettajille.</p>
-      <p><a href="/miksi-epasanat">Miksi hölynpölysanojen lukeminen auttaa lukivaikeudessa ja ADHD:ssa</a></p>
+      <p><a href="/miksi-epasanat">Miksi hölynpölysanojen lukeminen auttaa lukivaikeudessa ja adhd:ssa</a></p>
       <p><a href="/vanhemmille-ja-opettajille">Ohje vanhemmille ja opettajille</a></p>
       <p><a href="/vanhemmille-ja-opettajille#kotivalikko">Näin saat sivun kotivalikkoon</a></p>
       <p><a href="/ukk">Usein kysyttyä</a></p>

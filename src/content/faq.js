@@ -26,7 +26,7 @@ export const faq = [
   {
     question: 'Kenelle harjoitus sopii?',
     answer:
-      'Nuorille, joilla on lukivaikeus (lukihäiriö, dysleksia) tai joiden lukeminen on hidasta, työlästä tai kiireistä, esimerkiksi ADHD:n vuoksi. Se sopii myös kaikille, jotka haluavat vahvistaa lukemisen tarkkuutta.',
+      'Nuorille, joilla on lukivaikeus (lukihäiriö, dysleksia) tai joiden lukeminen on hidasta, työlästä tai kiireistä, esimerkiksi adhd:n vuoksi. Se sopii myös kaikille, jotka haluavat vahvistaa lukemisen tarkkuutta.',
   },
   {
     question: 'Tarvitseeko aikuisen olla vieressä?',
@@ -46,7 +46,7 @@ export const faq = [
   {
     question: 'Korvaako harjoitus lukivaikeuden tutkimuksen?',
     answer:
-      'Ei. Harjoitus ei korvaa lukivaikeuden tai ADHD:n tutkimusta, diagnoosia eikä ammattilaisen tukea. Jos lukeminen tuntuu jatkuvasti työläältä, ota yhteyttä koulun erityisopettajaan tai kouluterveydenhuoltoon.',
+      'Ei. Harjoitus ei korvaa lukivaikeuden tai adhd:n tutkimusta, diagnoosia eikä ammattilaisen tukea. Jos lukeminen tuntuu jatkuvasti työläältä, ota yhteyttä koulun erityisopettajaan tai kouluterveydenhuoltoon.',
   },
 ]
 
